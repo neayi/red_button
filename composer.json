@@ -1,0 +1,12 @@
+{
+    "require": {
+        "ovh/ovh": "^3.1"
+    },
+    "config": {
+		"optimize-autoloader": true,
+		"prepend-autoloader": false,
+		"platform": {
+			"php": "7.4"
+		}
+	}
+}
