@@ -86,6 +86,9 @@ if (!empty($_POST['VPS']))
         echo '<div class="alert alert-danger" role="alert">
                 Serveur en cours de redémarrage... Veuillez patienter quelques dizaines de secondes !
               </div>';
+
+        $result = $ovh->post('/vps/' . $_POST['VPS'] . '/reboot');
+
         echo '<pre>';
         print_r($result);
         echo '</pre>';
