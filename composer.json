@@ -1,6 +1,7 @@
 {
     "require": {
-        "ovh/ovh": "^3.1"
+        "ovh/ovh": "^3.1",
+        "ddrv/env": "^2.0"
     },
     "config": {
 		"optimize-autoloader": true,

@@ -4,8 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9585c2aa4ecbbbdccd1a4381ac592a5",
+    "content-hash": "68f70176e8715cbd9963ba21f40b66a0",
     "packages": [
+        {
+            "name": "ddrv/env",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ddrv/php-env.git",
+                "reference": "df1e0124cb8e3d770792616c19cbadbcbe0550a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ddrv/php-env/zipball/df1e0124cb8e3d770792616c19cbadbcbe0550a6",
+                "reference": "df1e0124cb8e3d770792616c19cbadbcbe0550a6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.5 || ^7.5 || ^8.5 || ^9.5",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ddrv\\Env\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Dudarev",
+                    "email": "ivan@ddrv.ru"
+                }
+            ],
+            "description": "Read variables from environment or .env file",
+            "keywords": [
+                ".env",
+                "env",
+                "environment"
+            ],
+            "support": {
+                "issues": "https://github.com/ddrv/php-env/issues",
+                "source": "https://github.com/ddrv/php-env/tree/v2.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/ddrv",
+                    "type": "other"
+                }
+            ],
+            "time": "2022-08-24T01:41:24+00:00"
+        },
         {
             "name": "guzzlehttp/guzzle",
             "version": "7.5.0",

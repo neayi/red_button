@@ -1,23 +1,27 @@
 <?php
 
-session_start();
-
-
 require __DIR__ . '/vendor/autoload.php';
 
+use Ddrv\Env\Env;
+use Ddrv\Env\VariableProvider\EnvVariableProvider;
+use Ddrv\Env\VariableProvider\FileVariableProvider;
 use \Ovh\Api;
 
 try {
+    $env = new Env(
+        new EnvVariableProvider(),
+        new FileVariableProvider('../ovh.env'),
+    );
 
     /**
      * Instanciate an OVH Client.
      * You can generate new credentials with full access to your account on
      * the token creation page
      */
-    $ovh = new Api( $_ENV['OVH_Application_Key'],  // Application Key
-                    $_ENV['OVH_Application_Secret'],  // Application Secret
+    $ovh = new Api( $env->get('OVH_Application_Key'),  // Application Key
+                    $env->get('OVH_Application_Secret'),  // Application Secret
                     'ovh-eu',      // Endpoint of API OVH Europe (List of available endpoints)
-                    $_ENV['OVH_Consumer_Key']); // Consumer Key
+                    $env->get('OVH_Consumer_Key')); // Consumer Key
 
     if (empty($_POST['VPS']))
     {
@@ -70,7 +74,8 @@ if (!empty($vps_servers))
 
 if (!empty($_POST['VPS']))
 {
-    if ($_POST['password'] != $_ENV['OVH_PASSPHRASE'] || empty($_ENV['OVH_PASSPHRASE']))
+    $passphrase = $env->get('OVH_PASSPHRASE');
+    if ($_POST['password'] != $passphrase || empty($passphrase))
     {
         echo '<div class="alert alert-danger" role="alert">
                 Veuillez saisir le mot de passe pour redémarrer le serveur !
